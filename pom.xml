@@ -5,6 +5,10 @@
     <groupId>cn.icodening.router</groupId>
     <artifactId>router-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>core</module>
+        <module>adapter</module>
+    </modules>
     <packaging>pom</packaging>
     <name>router</name>
 
@@ -47,6 +51,15 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -1,0 +1,2 @@
+cn.icodening.router.core.strategy.MetadataRoutingStrategyFactory
+cn.icodening.router.core.strategy.NormalRoutingStrategyFactory
