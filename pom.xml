@@ -8,6 +8,9 @@
     <modules>
         <module>core</module>
         <module>adapter</module>
+        <module>config-source</module>
+        <module>router-starter</module>
+        <module>router-admin</module>
     </modules>
     <packaging>pom</packaging>
     <name>router</name>
@@ -17,6 +20,7 @@
         <spring-boot.version>2.2.13.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
         <nacos-config-starter.version>0.2.7</nacos-config-starter.version>
+        <spring-cloud-alibaba-bom.version>2.2.1.RELEASE</spring-cloud-alibaba-bom.version>
     </properties>
 
 
@@ -31,6 +35,14 @@
             </dependency>
 
             <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.version}</version>
@@ -38,11 +50,11 @@
                 <scope>import</scope>
             </dependency>
 
-            <dependency>
-                <groupId>com.alibaba.boot</groupId>
-                <artifactId>nacos-config-spring-boot-starter</artifactId>
-                <version>${nacos-config-starter.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba.boot</groupId>-->
+<!--                <artifactId>nacos-config-spring-boot-starter</artifactId>-->
+<!--                <version>${nacos-config-starter.version}</version>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 

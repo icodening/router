@@ -14,8 +14,10 @@ import java.util.List;
  */
 public class NormalRoutingStrategy extends AbstractRoutingStrategy {
 
+    public static final String NAME = "normal";
+
     public NormalRoutingStrategy(IDiscoveryClient discoveryClient) {
-        super(discoveryClient);
+        super(NAME, discoveryClient);
     }
 
     @Override

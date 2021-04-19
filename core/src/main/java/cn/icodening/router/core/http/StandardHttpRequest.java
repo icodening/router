@@ -14,7 +14,7 @@ public interface StandardHttpRequest extends Request {
 
     String header(String name);
 
-    String header(String name, String value);
+    void header(String name, String value);
 
     String contentType();
 }

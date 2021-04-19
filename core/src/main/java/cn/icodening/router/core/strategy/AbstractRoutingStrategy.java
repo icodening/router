@@ -12,13 +12,16 @@ public abstract class AbstractRoutingStrategy
 
     private final IDiscoveryClient discoveryClient;
 
-    protected AbstractRoutingStrategy(IDiscoveryClient discoveryClient) {
+    private final String name;
+
+    protected AbstractRoutingStrategy(String name, IDiscoveryClient discoveryClient) {
         this.discoveryClient = discoveryClient;
+        this.name = name;
     }
 
     @Override
     public String name() {
-        return this.getClass().getSimpleName();
+        return name;
     }
 
     public IDiscoveryClient getDiscoveryClient() {

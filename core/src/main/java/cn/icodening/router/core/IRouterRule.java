@@ -6,7 +6,7 @@ package cn.icodening.router.core;
  * @author icodening
  * @date 2021.04.16
  */
-public interface IRouterRule extends Priority {
+public interface IRouterRule extends Priority, Unique {
 
     /**
      * 获取路由的目标服务名

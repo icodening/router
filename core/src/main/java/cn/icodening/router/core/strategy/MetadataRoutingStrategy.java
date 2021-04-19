@@ -15,8 +15,10 @@ import java.util.List;
  */
 public class MetadataRoutingStrategy extends AbstractRoutingStrategy {
 
+    public static final String NAME = "meta";
+
     public MetadataRoutingStrategy(IDiscoveryClient discoveryClient) {
-        super(discoveryClient);
+        super(NAME, discoveryClient);
     }
 
     @Override
