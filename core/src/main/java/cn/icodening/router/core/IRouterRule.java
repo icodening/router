@@ -9,6 +9,20 @@ package cn.icodening.router.core;
 public interface IRouterRule extends Priority, Unique {
 
     /**
+     * 获取改规则所属应用名
+     *
+     * @return 规则所属应用名
+     */
+    String getApplicationName();
+
+    /**
+     * 获取该规则原目标服务
+     *
+     * @return 该规则原始服务名
+     */
+    String getOriginService();
+
+    /**
      * 获取路由的目标服务名
      *
      * @return 目标服务名

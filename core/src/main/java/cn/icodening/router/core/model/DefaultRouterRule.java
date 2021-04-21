@@ -2,6 +2,8 @@ package cn.icodening.router.core.model;
 
 import cn.icodening.router.core.IRouterRule;
 
+import java.util.Objects;
+
 /**
  * @author icodening
  * @date 2021.04.19
@@ -14,6 +16,10 @@ public class DefaultRouterRule implements IRouterRule {
 
     private String id;
 
+    private String applicationName;
+
+    private String originService;
+
     private String targetService;
 
     private String uri;
@@ -25,6 +31,8 @@ public class DefaultRouterRule implements IRouterRule {
     private String routingFactorValue;
 
     private String routingFactorSource = DEFAULT_SOURCE;
+
+    private int priority;
 
     public DefaultRouterRule() {
     }
@@ -58,6 +66,24 @@ public class DefaultRouterRule implements IRouterRule {
 
     public void setRoutingFactorValue(String routingFactorValue) {
         this.routingFactorValue = routingFactorValue;
+    }
+
+    @Override
+    public String getApplicationName() {
+        return applicationName;
+    }
+
+    @Override
+    public String getOriginService() {
+        return originService;
+    }
+
+    public void setOriginService(String originService) {
+        this.originService = originService;
+    }
+
+    public void setApplicationName(String applicationName) {
+        this.applicationName = applicationName;
     }
 
     @Override
@@ -98,5 +124,32 @@ public class DefaultRouterRule implements IRouterRule {
     @Override
     public void setId(String id) {
         this.id = id;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        DefaultRouterRule that = (DefaultRouterRule) object;
+        return targetService.equals(that.targetService) &&
+                uri.equals(that.uri) &&
+                routingStrategy.equals(that.routingStrategy) &&
+                routingFactorKey.equals(that.routingFactorKey) &&
+                routingFactorValue.equals(that.routingFactorValue) &&
+                routingFactorSource.equals(that.routingFactorSource);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(targetService, uri, routingStrategy, routingFactorKey, routingFactorValue, routingFactorSource);
     }
 }
